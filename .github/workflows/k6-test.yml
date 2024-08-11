@@ -16,6 +16,8 @@ jobs:
     - name: Run Webpack
       run: npx webpack
     - name: Install K6
-      run: npm install -g k6
+      run: |
+        npm install -g k6
+        k6 version # Verify that k6 is installed correctly
     - name: Run K6 Tests
-      run: k6 run dist/bundle.js
+      run: npx k6 run dist/bundle.js
