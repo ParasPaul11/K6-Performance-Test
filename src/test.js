@@ -2,7 +2,7 @@ import http from 'k6/http';
 import { check, sleep } from 'k6';
 import { Trend, Counter, Rate, Gauge } from 'k6/metrics';
 
-//MyCode
+//MyCodeParas
 // Custom metrics
 const waitingTime = new Trend('waiting_time'); // Tracks waiting time
 const myCounter = new Counter('successful_requests'); // Counts successful requests
