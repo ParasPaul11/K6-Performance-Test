@@ -21,8 +21,9 @@ jobs:
 
     - name: Install K6
       run: |
-        curl -s https://packagecloud.io/install/repositories/loadimpact/k6/script.deb.sh | sudo bash
-        sudo apt-get install k6
+        wget -q https://github.com/grafana/k6/releases/download/v0.45.0/k6-v0.45.0-linux-amd64.tar.gz
+        tar -xzf k6-v0.45.0-linux-amd64.tar.gz
+        sudo mv k6-v0.45.0-linux-amd64/k6 /usr/local/bin/
 
     - name: Run K6 Tests
       run: k6 run dist/bundle.js
