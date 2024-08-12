@@ -2,6 +2,7 @@ import http from 'k6/http';
 import { check, sleep } from 'k6';
 import { Trend, Counter, Rate, Gauge } from 'k6/metrics';
 
+
 //Auther: Paras Paul
 // Custom metrics
 const waitingTime = new Trend('waiting_time'); // Tracks waiting time
@@ -75,7 +76,7 @@ export function setup() {
 }
 
 export default function () {
-  const res = http.get(host);
+  const res = http.get(host, {tags: {name: "Tx_00_GetAPI"}});
   
   // Checking the response
   const checkRes = check(res, {
@@ -90,7 +91,7 @@ export default function () {
   myCounter.add(1);
   successRate.add(checkRes);
   
-  sleep(1);
+  sleep(Math.random() *2); //Generate random delay betn 0-2 secs 
 }
 
 export function teardown(data) {
