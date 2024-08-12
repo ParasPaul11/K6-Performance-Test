@@ -7,17 +7,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
         node-version: '14'
+
     - name: Install Dependencies
       run: npm install
+
     - name: Run Webpack
       run: npx webpack
+
     - name: Install K6
       run: |
-        npm install -g k6
-        k6 version # Verify that k6 is installed correctly
+        curl -s https://packagecloud.io/install/repositories/loadimpact/k6/script.deb.sh | sudo bash
+        sudo apt-get install k6
+
     - name: Run K6 Tests
-      run: npx k6 run dist/bundle.js
+      run: k6 run dist/bundle.js
