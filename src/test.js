@@ -1,4 +1,4 @@
-//Author: Paras Paul
+//Author: Paras Paul- Performance QA
 
 import http from 'k6/http';
 import { check, sleep } from 'k6';
