@@ -10,7 +10,6 @@ This repository contains an advanced performance testing setup using the K6 fram
 - [Webpack Configuration](#webpack-configuration)
 - [GitHub Actions CI](#github-actions-ci)
 - [Running the Tests Locally](#running-the-tests-locally)
-- [Contributing](#contributing)
 
 
 ## **Prerequisites**
@@ -82,12 +81,4 @@ To run the K6 tests locally:
 
 This will execute the bundled K6 script and display the results in your terminal.
 
-## **Contributing**
 
-Contributions are welcome! Please fork this repository, create a new branch for your feature or bugfix, and submit a pull request. Ensure your code adheres to the project's coding standards and passes all tests.
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Commit your changes (`git commit -am 'Add new feature'`).
-4. Push to the branch (`git push origin feature-branch`).
-5. Create a new Pull Request.
